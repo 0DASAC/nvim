@@ -6,6 +6,9 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+map('n', '<C-Q>', ':q!<CR>')
+map('n', '<C-W>', ':wq<CR>')
+
 --FZF Lua
 map('n', '<leader>f', "<cmd>lua require('fzf-lua').files()<CR>",
 { noremap = true, silent = true })
