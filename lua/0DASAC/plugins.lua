@@ -46,7 +46,7 @@ return require('packer').startup(function()
   --fzf
   -----------------------------------------------------------------------
     use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
-    use {'junegunn/fzf.vim'}
+    use { 'ibhagwan/fzf-lua', requires = { 'kyazdani42/nvim-web-devicons' }}
     
   --Formating
   -----------------------------------------------------------------------
@@ -54,6 +54,7 @@ return require('packer').startup(function()
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'  -- Sortcuts
     use 'preservim/nerdcommenter' -- Add a Comment
+    require('0DASAC.plugins.nerdcomenter-config')
 
   --IDE
   -----------------------------------------------------------------------
@@ -63,9 +64,13 @@ return require('packer').startup(function()
 
   --Nice Status Line
   -----------------------------------------------------------------------
-    use { 'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    require('lualine').setup()
+    use 'itchyny/lightline.vim'
+    -- vim.g.lightline = {'colorscheme': 'solarized'}
+
+    
+  --LSP  
+  -----------------------------------------------------------------------
+    use {'neoclide/coc.nvim', branch = 'release'}
+    require('0DASAC.plugins.coc-config')
 
 end)  

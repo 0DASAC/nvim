@@ -41,3 +41,4 @@ o.splitbelow = true
 
 -- style
 local ok, _ = pcall(vim.cmd, 'colorscheme base16-solarized-dark')
+g.lightline = {['colorscheme'] =  'solarized'}

@@ -6,8 +6,19 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-map('n', '<leader>f', ':Files<CR>')
+--FZF Lua
+map('n', '<leader>f', "<cmd>lua require('fzf-lua').files()<CR>",
+{ noremap = true, silent = true })
 
-
+-- NerdTree
 map('n', '<leader>n', ':NERDTreeFocus<CR>')
 map('n', '<C-n>', ':NERDTree<CR>')
+
+-- Ultisnips
+vim.g.UltiSnipsExpandTrigger = '<C-TAB>'
+
+-- NerdCommenter
+vim.g.NERDCommenterComment = '<leader>cc'
+vim.g.NERDCommenterUncomment = '<leader>cu'
+
+
