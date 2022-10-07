@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/odasac/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
   },
+  ["vim-signature"] = {
+    loaded = true,
+    path = "/home/odasac/.local/share/nvim/site/pack/packer/start/vim-signature",
+    url = "https://github.com/kshenoy/vim-signature"
+  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/odasac/.local/share/nvim/site/pack/packer/start/vim-snippets",

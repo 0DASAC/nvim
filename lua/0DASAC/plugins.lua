@@ -61,6 +61,7 @@ return require('packer').startup(function()
     use 'chriskempson/base16-vim'
     use 'vim-scripts/indentLine.vim'
     use 'preservim/nerdtree'
+    use 'kshenoy/vim-signature' -- add a visual marc for marcs
 
   --Nice Status Line
   -----------------------------------------------------------------------

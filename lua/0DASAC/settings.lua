@@ -14,7 +14,7 @@ o.scrolloff = 8
 o.number = true
 o.numberwidth = 5
 o.relativenumber = true
--- o.signcolumn = 'yes:2'
+o.signcolumn = 'yes'
 o.cursorline = true
 
 -- Better editing experience
@@ -39,6 +39,10 @@ o.history = 50
 o.splitright = true
 o.splitbelow = true
 
+-- Dont highlight search
+o.hlsearch = false
+
+-- o.filetype.plugin.indent.on = true
 -- style
 local ok, _ = pcall(vim.cmd, 'colorscheme base16-solarized-dark')
 g.lightline = {['colorscheme'] =  'solarized'}
