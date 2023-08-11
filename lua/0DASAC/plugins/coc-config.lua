@@ -126,3 +126,25 @@ vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}"
 local opts = {silent = true, nowait = true}
 -- Show all diagnostics.
 keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
+
+-- Mapear <Tab> para activar el autocompletado de coc.nvim
+vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true, noremap = true })
+
+-- Mapear <S-Tab> para navegar por las opciones de autocompletado hacia atrás
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { expr = true, noremap = true })
+
+-- CONFIGURACION DE C y C++
+-- Configuración específica para archivos .c
+vim.api.nvim_exec([[
+  augroup coc_c_config
+    autocmd!
+    autocmd FileType c,cpp setlocal formatexpr=CocAction('formatSelected')
+    autocmd FileType c,cpp nmap <buffer> <Leader>cf <Plug>(coc-codeaction)
+    autocmd FileType c,cpp nmap <buffer> <Leader>qd <Plug>(coc-diagnostic)
+  augroup end
+]], false)
+
+-- Agrega los linters y formateadores necesarios para C en coc-settings.json
+-- CocConfig es el nombre del archivo que almacena tu configuración de coc.nvim
+vim.fn.writefile({'{', '  "languageserver": {', '    "c": {', '      "command": "clangd",', '      "filetypes": ["c", "cpp"]', '    }', '  }', '}'}, vim.fn.stdpath('config') .. '/coc-config.json')
+

@@ -13,3 +13,6 @@ vim.g.NERDDefaultAlign = 'left'
 --Use compact syntax for prettified multi-line comments
 vim.g.NERDCompactSexyComs = 1
 
+-- Inicializa NERDTree y asigna una función para cerrarlo si es lo único abierto
+vim.cmd([[autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | q | endif]])
+
